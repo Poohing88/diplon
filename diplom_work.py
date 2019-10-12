@@ -1,8 +1,8 @@
 import requests
-from pprint import pprint
 import time
 import json
-access_token = '113b717a9bcc61855524bb35c03f681849b243d21004a64cab6b256b037df8c32611124e452336e0459ed'
+import os.path
+access_token = '0ac669e05d0ca5226dcb88ebf720edf3ccc79b47362f820f1f7fdc69110b8ca578c7bdf903ea5941f6559'
 
 
 class User:
@@ -95,7 +95,8 @@ class User:
 
 
 def write(file_load):
-    with open('/home/mishanya/Python/дз/Diploma/groups.json', mode='w', encoding='utf8') as f:
+    workdir = os.path.dirname(__file__)
+    with open(f'{workdir}/groups.json', mode='w', encoding='utf8') as f:
         json.dump(file_load, f, ensure_ascii=False, indent=2)
 
 
